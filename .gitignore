@@ -1,0 +1,7 @@
+node_modules/
+app/
+static/
+react-demo.js
+server.js
+.DS_Store
+public/library/jquery/
