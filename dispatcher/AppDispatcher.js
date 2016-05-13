@@ -1,16 +1,15 @@
 var Dispatcher = require('flux').Dispatcher;
 var AppDispatcher = new Dispatcher();
-var ListStore = require('../stores/ListStore');
+var Store = require('../stores/Store');
 
-AppDispatcher.register(function (action) {
-  switch(action.actionType) {
-    case 'NEW_CONNECTION':
-      let attrLink = action.target.getAttribute('data-link');
-      ListStore.getReadmeJSON(attrLink);
-      break;
-    default:
-      // no op
-  }
+AppDispatcher.register(function(action) {
+	switch (action.actionType) {
+		case 'NEW_CONNECTION':
+			Store.ListStore.getReadmeJSON(action.target);
+			break;
+		default:
+			// no op
+	}
 })
 
 module.exports = AppDispatcher;
